@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Poppins&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 html{
@@ -23,7 +25,7 @@ body{
     color: #ff9f2c;
 }
 .container{
-    padding: 10px 10%;
+    padding: 50px 10%;
 }
 
 nav{
@@ -31,6 +33,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    z-index: 999;
 }
 .logo{
     width: 140px;
@@ -75,10 +78,11 @@ nav ul li a:hover::after{
 }
 .header-text h1 span{
     color: #ff9f2c;
-    font-size: 65px;
+    font-size: 70px;
 }
 span.auto-type{
     color: #fff;
+    font-family:'Courier New', Courier, monospace;
 }
 #navbar {
     overflow: hidden;
@@ -114,7 +118,7 @@ span.auto-type{
 }
 
 .about-col-1{
-    flex-basis: 35%;
+    flex-basis: 20%;
 }
 
 .about-col-1 img{
@@ -127,13 +131,14 @@ span.auto-type{
 }
 
 .about-col-2{
-    flex-basis: 60%;
+    flex-basis: 75%;
 }
 
 .subtitle{
     font-size: 60px;
     font-weight: 600;
     color: #fff;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .tab-titles{
@@ -167,11 +172,12 @@ span.auto-type{
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
+    font-size: 14px;
 }
 
 .tab-contents ul li span{
     color: #ff9f2c;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .tab-contents{
@@ -181,7 +187,6 @@ span.auto-type{
 .tab-contents.active-tab{
     display: block;
 }
-
 /* ---------- about ---------- */
 #skills{
     padding: 30px 0;
@@ -199,13 +204,10 @@ span.auto-type{
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
-}
-.skills-list div i{
-    font-size: 50px;
-    margin-bottom: 30px;
+    text-align: center;
 }
 .skills-list div h2{
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 500;
     margin-bottom: 15px;
 }
@@ -216,13 +218,17 @@ span.auto-type{
     margin-top: 20px;
     display: inline-block;
 }
+.skills-list div .logos{
+    font-size:50px;
+    letter-spacing: 10px;
+    padding: 5px 5px;
+}
 .skills-list div:hover{
     background: #ff9f2c;
     transform: translateY(-10px);
 }
 .flick {
-    -webkit-animation: flicker 2s;
-    /*-webkit-animation: flicker 2s infinite;*/
+    -webkit-animation: flicker 2s infinite;
 }
 @-webkit-keyframes flicker{
     0% {opacity:0;}
@@ -235,7 +241,7 @@ span.auto-type{
 
 /* ---------- project ---------- */
 #project{
-    padding: 50x 0;
+    padding: 50px 0;
 }
 .work-list{
     display: grid;
@@ -251,13 +257,18 @@ span.auto-type{
 .work img{
     width: 100%;
     border-radius: 10px;
+    border-width: 50px;
     display: block;
     transition: transform 0.5s;
+}
+.work .fa-brands{
+    font-size: 50px;
+    margin-top: 5px;
 }
 .layer{
     width: 100%;
     height: 0%;
-    background: linear-gradient(rgba(0,0,0,0.5), #fe5d00);
+    background: linear-gradient(rgba(0,0,0,0.9), #fe5d00);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -268,7 +279,6 @@ span.auto-type{
     justify-content: center;
     flex-direction: column;
     padding: 0 40px;
-    text-align: center;
     font-size: 14px;
     transition: height 0.5s;
 }
@@ -305,11 +315,6 @@ span.auto-type{
     color: #fff;
     transition: background 0.5s;
 }
-.btn:hover{
-    background: #ff004f;
-
-}
-
 /* ---------- contact ---------- */
 .contact-left{
     flex-basis: 35%;
@@ -378,15 +383,25 @@ form .btn2{
 nav .fa-solid{
     display: none;
 }
+
+
+@media only screen and (max-height: 2150px){
+    .work{
+        height: 300px;
+    }
+    .layer{
+        font-size: 12px;
+    }
+}
 @media only screen and (max-width: 800px){
     .header-text{
         font-size: 16px;
     }
     .header-text h1{
-        font-size: 30px;
+        font-size: 25px;
     }
     .header-text h1 span{
-        font-size: 35px; 
+        font-size: 50px; 
     }
     nav .fa-solid{
         display: block;
@@ -416,17 +431,22 @@ nav .fa-solid{
 }
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/wolf_left_pic.jpeg);
+        background-image: url(images/wolf_eyes.jpg);
     }
     .header-text{
+        padding: 120% 0 20% 0;
         font-size: 16px;
     }
     .header-text h1{
-        font-size: 30px;
+        font-size: 20px;
+    }
+    .header-text h1 span{
+        font-size: 35px;
     }
     nav .fa-solid{
         display: block;
         font-size: 25px;
+        padding: 0px 20px 0px 0px;
     }
     nav ul{
         background: #ff9f2c;
@@ -463,8 +483,28 @@ nav .fa-solid{
         font-size: 14px;
     }
     .tab-links{
-        font-size: 16px;
-        margin-right: 20px;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    /* ----- skills ----- */
+    .skills-list div h2{
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    .skills-list div .logos{
+        font-size:40px;
+        letter-spacing: 10px;
+    }
+    .work{
+        height: 250px;
+    }
+    .work2{
+        height:170px;
+    }
+    .layer{
+        font-size: 10px;
     }
     /* ----- contact ----- */
     .contact-left, .contact-right{
